@@ -48,7 +48,7 @@ for (var i = 0; i < directions.length; i++) {
       v += dv;
     }
 
-		if (firstLocation == '') {
+    if (firstLocation == '') {
       if (!locations[h + ', ' + v]) {
         locations[h + ', ' + v] = 1;
       } else {
