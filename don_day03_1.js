@@ -7,11 +7,10 @@ for (var i = 0; i < sides.length; i += 3) {
   sides[i] = parseInt(sides[i]);
   sides[i+1] = parseInt(sides[i+1]);
   sides[i+2] = parseInt(sides[i+2]);
-  if (sides[i] + sides[i+1] <= sides[i+2] ||
-      sides[i+1] + sides[i+2] <= sides[i] ||
-      sides[i+2] + sides[i] <= sides[i+1]) {
-      continue;
+  if (sides[i] + sides[i+1] > sides[i+2] &&
+      sides[i+1] + sides[i+2] > sides[i] &&
+      sides[i+2] + sides[i] > sides[i+1]) {
+      valid += 1;
   }
-  valid += 1;
 }
 console.log(valid);
