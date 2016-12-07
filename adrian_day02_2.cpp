@@ -17,7 +17,7 @@ int main() {
       else if ((inst[i] == 'R') && (pos & 0x06F6) > 0)
         pos = pos << 1;
     }
-    std::cout << ((log2(pos) > 8) ? (char)((log2(pos) - 9) + 'A') : (char)(log2(pos) + '1')) << " " << std::endl;
+    std::cout << ((log2(pos) > 8) ? (char)((log2(pos) - 9) + 'A') : (char)(log2(pos) + '1')) << std::endl;
     std::cin >> inst;
   }
   return 0;
