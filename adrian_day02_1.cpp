@@ -8,30 +8,16 @@ int main() {
   std::cin >> inst;
   while (endInput.compare(inst) != 0) {
     for (int i = 0; i < inst.size(); i++) {
-      switch (inst[i]) {
-        case 'U': {
-          if (pos > 4)
-            pos = pos >> 3;
-          break;
-        }
-        case 'D': {
-          if (pos < 64)
-            pos = pos << 3;
-          break;
-        }
-        case 'L': {
-          if ((pos & 0x1b6) > 0)
-            pos = pos >> 1;
-          break;
-        }
-        case 'R': {
-          if ((pos & 0x0db) > 0)
-            pos = pos << 1;
-          break;
-        }
-      }
+      if ((inst[i] == 'U') && (pos > 4))
+        pos = pos >> 3;
+      else if ((inst[i] == 'D') && (pos < 64))
+        pos = pos << 3;
+      else if ((inst[i] == 'L') && ((pos & 0x1b6) > 0))
+        pos = pos >> 1;
+      else if ((inst[i] == 'R') && ((pos & 0x0db) > 0))
+        pos = pos << 1;
     }
-    std::cout << "position stop " << log2(pos) + 1 << std::endl;
+    std::cout << log2(pos) + 1 << std::endl;
     std::cin >> inst;
   }
   return 0;
